@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Study Notes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <style>
   * {
     box-sizing: border-box;
@@ -128,6 +129,7 @@
 
   #bottom-nav {
     display: flex;
+    align-items: center;
     overflow-x: auto;
     white-space: nowrap;
     padding: 0.75rem 1rem;
@@ -197,13 +199,14 @@
 </main>
 
 <nav id="bottom-nav">
+  <button id="btn-Syllabus">Syllabus</button>
   <button id="btn-Maths">Maths</button>
   <button id="btn-CurrentAffairs">Current Affairs</button>
   <button id="btn-English">English</button>
   <button id="btn-Computer">Computer</button>
   <button id="btn-TipsTricks">Tips & Tricks</button>
-  <button id="btn-AIFeatures">AI Features</button>
-  <button onclick="window.location.href='https://imrutunjaya.github.io/Prototype3/'">Advanced Learner's</button>
+  <button id="btn-Exams">Exams</button>
+  <button id="btn-Vidstream" onclick="window.location.href='https://the-mrutunjaya.github.io/Vidstream/'">Vidstream</button>
   <button onclick="window.location.href='https://imrutunjaya.github.io/notes/'">Annotation</button>
 </nav>
 
@@ -213,12 +216,16 @@
 
     // Subjects with array of topic markdown files per subject
     const subjects = {
+      Syllabus: [
+        { title: "Syllabus Overview", file: "syllabus/overview.md" },
+        { title: "Math Syllabus", file: "syllabus/maths.md" },
+        { title: "English Syllabus", file: "syllabus/english.md" }
+      ],
       Maths: [
         { title: "Algebra", file: "maths/algebra.md" },
         { title: "Trigonometry", file: "maths/trigonometry.md" },
         { title: "Linear Equations", file: "maths/linear_equations.md" },
-        { title: "Geometry", file: "maths/geometry.md" },
-        // Add more topics here as needed
+        { title: "Geometry", file: "maths/geometry.md" }
       ],
       CurrentAffairs: [
         { title: "Latest Nobel Prize", file: "current_affairs/nobel_prize.md" },
@@ -236,9 +243,9 @@
         { title: "Study Tip: Pomodoro", file: "tips_and_tricks/pomodoro.md" },
         { title: "Memory Tricks", file: "tips_and_tricks/memory_tricks.md" }
       ],
-      AIFeatures: [
-        { title: "What is AI?", file: "ai_features/what_is_ai.md" },
-        { title: "Applications of AI", file: "ai_features/applications.md" }
+      Exams: [
+        { title: "Exam Preparation", file: "exams/preparation.md" },
+        { title: "Exam Strategies", file: "exams/strategies.md" }
       ]
     };
 
@@ -365,7 +372,7 @@
     }
 
     // Load default subject at start
-    loadSubject('Maths');
+    loadSubject('Syllabus');
   })();
 </script>
 </body>
